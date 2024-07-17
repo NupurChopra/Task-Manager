@@ -1,0 +1,40 @@
+<div class="w-full h-screen flex items-center justify-center">
+    <div *ngIf="authLogin" class="authComp w-[480px]  border rounded-lg overflow-hidden">
+        <div class="w-full h-16 flex items-center  justify-center gap-x-4">
+            <button class="w-full flex items-center justify-center text-white bg-blue-500 h-full font-bold" (click)="changeToLogin()">Login</button>
+            <button class="w-full flex items-center justify-center" (click)="changetoSignup()">Signup</button>
+        </div>
+        <div class="h-full my-4 flex  flex-col flex-1  items-center">
+            <div class=" w-full px-10 ">
+                <label for="username" class="text-black block  py-2 text-[16px] font-semibold">Username</label>
+                <input type="text" (input)="onChange($event, 'username')"  name="username" id="username" class="w-full px-4 py-2 outline-none bg-slate-200 rounded-xl" placeholder="john@doe.com"> 
+            </div>
+            <div class=" w-full px-10 ">
+                <label for="password" class="text-black block  py-2 text-[16px] font-semibold">Password</label>
+                <input type="password" (input)="onChange($event, 'password')" name="password" id="password" class="w-full px-4 py-2 outline-none bg-slate-200 rounded-xl" placeholder="*********"> 
+            </div>  
+            <button (click)="onSubmit()" class="h-12  mt-8  bg-blue-700  w-3/4 rounded-xl text-white font-bold hover:bg-blue-900 transition duration-200">Login</button>
+        </div>
+    </div>
+    <div *ngIf="!authLogin" class="authComp w-[480px]  border rounded-lg overflow-hidden">
+        <div class="w-full h-16 flex items-center  justify-center gap-x-4">
+            <button class="w-full flex items-center justify-center  h-full " (click)="changeToLogin()">Login</button>
+            <button class="w-full flex items-center justify-center h-full font-bold  text-white bg-blue-500" (click)="changetoSignup()">Signup</button>
+        </div>
+        <div class="h-full my-4 flex  flex-col flex-1  items-center">
+            <div class=" w-full px-10 ">
+                <label for="name" class="text-black block  py-2 text-[16px] font-semibold">Fullname</label>
+                <input type="text" (input)="onChange($event, 'fullName')" name="Fullname"  id="name" class="w-full px-4 py-2 outline-none bg-slate-200 rounded-xl" placeholder="John Doe"> 
+            </div>
+            <div class=" w-full px-10 ">
+                <label for="username" class="text-black block  py-2 text-[16px] font-semibold">Username</label>
+                <input type="text" (input)="onChange($event, 'username')" name="username" id="username" class="w-full px-4 py-2 outline-none bg-slate-200 rounded-xl" placeholder="john@doe.com"> 
+            </div>
+            <div class=" w-full px-10 ">
+                <label for="password" class="text-black block  py-2 text-[16px] font-semibold">Password</label>
+                <input type="password" (input)="onChange($event, 'password')"  name="password" id="password" class="w-full px-4 py-2 outline-none bg-slate-200 rounded-xl" placeholder="*********"> 
+            </div>  
+            <button (click)="onSubmit()" class="h-12  mt-8  bg-blue-700  w-3/4 rounded-xl text-white font-bold hover:bg-blue-900 transition duration-200">SignUp</button>
+        </div>
+    </div>
+</div>
